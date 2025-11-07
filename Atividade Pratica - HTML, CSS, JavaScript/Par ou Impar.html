@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Par ou Ímpar</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #e3f2fd;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.2);
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        button {
+            background: #1e88e5;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #1565c0;
+        }
+        #resultado {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Verificador Par ou Ímpar</h2>
+        <label for="numero">Digite um número:</label>
+        <input type="number" id="numero" placeholder="Ex: 12">
+        <button onclick="verificar()">Verificar</button>
+        <p id="resultado"></p>
+    </div>
+
+    <script>
+        function verificar() {
+            const n = document.getElementById('numero').value;
+
+            if (n === "") {
+                document.getElementById('resultado').innerText = "Digite um número válido.";
+                return;
+            }
+
+            if (n % 2 === 0) {
+                document.getElementById('resultado').innerText = "O número " + n + " é PAR.";
+            } else {
+                document.getElementById('resultado').innerText = "O número " + n + " é ÍMPAR.";
+            }
+        }
+    </script>
+</body>
+</html>
